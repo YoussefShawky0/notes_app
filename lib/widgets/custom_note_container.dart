@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/views/edit_note_view.dart';
 // import 'package:notes_app/models/note_data_model.dart';
 
 class CustomNoteContainer extends StatelessWidget {
@@ -31,6 +32,14 @@ class CustomNoteContainer extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
+                  ),
+                  const SizedBox(width: 8),
+
+                  IconButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, EditNoteView.id);
+                    },
+                    icon: const Icon(Icons.edit, color: Colors.white, size: 30),
                   ),
                   Spacer(),
                   IconButton(
