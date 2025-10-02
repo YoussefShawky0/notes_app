@@ -3,7 +3,7 @@ import 'package:notes_app/widgets/custom_bottom.dart';
 import 'package:notes_app/widgets/custom_txt_field.dart';
 
 class AddNoteFormState extends StatefulWidget {
-  AddNoteFormState({super.key});
+  const AddNoteFormState({super.key});
 
   @override
   State<AddNoteFormState> createState() => _AddNoteFormStateState();
