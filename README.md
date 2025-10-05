@@ -6,13 +6,9 @@
 
 ## 📸 Screenshots
 
-| Empty State | Notes View | Add Note |
-|-------------|------------|----------|
-| ![](lib/assets/screenshots/Empty.png) | ![](lib/assets/screenshots/Notes.png) | ![](lib/assets/screenshots/Add%20note.png) |
-
-| Edit Page |
-|-----------|
-| ![](lib/assets/screenshots/Edit%20page.png) |
+| Empty State | Notes View | Edit Page |
+|-------------|------------|-----------|
+| ![](lib/assets/screenshots/Empty.png) | ![](lib/assets/screenshots/Notes.png) | ![](lib/assets/screenshots/Edit%20page.png) |
 
 ---
 
