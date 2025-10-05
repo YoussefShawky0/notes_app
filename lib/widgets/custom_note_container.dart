@@ -25,29 +25,30 @@ class CustomNoteContainer extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(12.0),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    note.title!,
-                    style: TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                  Expanded(
+                    child: Text(
+                      note.title!,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 28,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
-                  const SizedBox(width: 8),
                   IconButton(
                     onPressed: () {
                       Navigator.pushNamed(
                         context,
                         EditNoteView.id,
                         arguments: note,
-                        
                       );
                     },
-                    icon: const Icon(Icons.edit, color: Colors.white, size: 30),
+                    icon: const Icon(Icons.edit, color: Colors.white, size: 26),
                   ),
-                  Spacer(),
                   IconButton(
                     onPressed: () {
                       note.delete();
@@ -56,7 +57,7 @@ class CustomNoteContainer extends StatelessWidget {
                     icon: const Icon(
                       Icons.delete,
                       color: Colors.white,
-                      size: 34,
+                      size: 28,
                     ),
                   ),
                 ],

@@ -48,7 +48,12 @@ class CustomTextField extends StatelessWidget {
           borderRadius: BorderRadius.circular(12),
         ),
         hintText: hintTxt,
-        hintStyle: const TextStyle(color: Colors.grey, fontSize: 18),
+        hintStyle: const TextStyle(
+          color: Colors.grey,
+          fontSize: 18,
+          overflow: TextOverflow.ellipsis,
+          
+        ),
       ),
     );
   }

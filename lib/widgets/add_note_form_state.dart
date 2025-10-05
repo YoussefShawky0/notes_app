@@ -37,7 +37,7 @@ class _AddNoteFormStateState extends State<AddNoteFormState> {
             onSaved: (value) => description = value,
             maxLines: 9,
           ),
-          SizedBox(height: 15),
+          SizedBox(height: 20),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomBottom(
