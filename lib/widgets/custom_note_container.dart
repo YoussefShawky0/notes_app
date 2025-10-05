@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/cubit/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/models/note_data_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 // import 'package:notes_app/models/note_data_model.dart';
@@ -36,13 +38,21 @@ class CustomNoteContainer extends StatelessWidget {
                   const SizedBox(width: 8),
                   IconButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, EditNoteView.id);
+                      Navigator.pushNamed(
+                        context,
+                        EditNoteView.id,
+                        arguments: note,
+                        
+                      );
                     },
                     icon: const Icon(Icons.edit, color: Colors.white, size: 30),
                   ),
                   Spacer(),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      note.delete();
+                      BlocProvider.of<NotesCubit>(context).fetchAllNotes();
+                    },
                     icon: const Icon(
                       Icons.delete,
                       color: Colors.white,
