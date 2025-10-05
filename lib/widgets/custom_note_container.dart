@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/models/note_data_model.dart';
 import 'package:notes_app/views/edit_note_view.dart';
 // import 'package:notes_app/models/note_data_model.dart';
 
 class CustomNoteContainer extends StatelessWidget {
-  // final NoteDataModel note;
+  const CustomNoteContainer({super.key, required this.note});
 
-  const CustomNoteContainer({super.key});
-
+  final NoteDataModel note;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -26,7 +26,7 @@ class CustomNoteContainer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
-                    'Note Title',
+                    note.title!,
                     style: TextStyle(
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
@@ -34,7 +34,6 @@ class CustomNoteContainer extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 8),
-
                   IconButton(
                     onPressed: () {
                       Navigator.pushNamed(context, EditNoteView.id);
@@ -60,7 +59,7 @@ class CustomNoteContainer extends StatelessWidget {
                 children: [
                   Expanded(
                     child: Text(
-                      'Note content goes here. This is just a placeholder.',
+                      note.description!,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(fontSize: 18, color: Colors.white70),
@@ -77,7 +76,7 @@ class CustomNoteContainer extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(12.0),
                   child: Text(
-                    'May 28, 2004',
+                    note.date!,
                     style: TextStyle(fontSize: 16, color: Colors.white54),
                   ),
                 ),
